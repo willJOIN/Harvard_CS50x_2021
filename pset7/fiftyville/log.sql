@@ -1,0 +1,37 @@
+-- Keep a log of any SQL queries you execute as you solve the mystery.
+--sqlite3 fiftyville.db
+--.tables
+--.schema crime_scene_reports
+--SELECT description FROM crime_scene_reports WHERE year = 2020 AND month = 7 AND day = 28 AND street = 'Chamberlin Street';
+--.tables
+--.schema interviews
+--SELECT transcript FROM interviews WHERE year = 2020 AND month = 7 AND day = 28;
+--.tables
+--.schema courthouse_security_logs
+--SELECT activity, license_plate FROM courthouse_security_logs WHERE year = 2020 AND month = 7 AND day = 28 AND hour = 10 AND minute < 25 AND activity = 'exit';
+--.tables
+--.schema people
+--SELECT id, name, phone_number, passport_number FROM people WHERE license_plate = '5P2BI95' OR license_plate = '94KL13X' OR license_plate = '6P58WS2' OR license_plate = '4328GD8' OR license_plate = 'G412CB7' OR license_plate = 'L93JTIZ' OR license_plate = '322W7JE' OR license_plate = '0NTHK55';
+--.tables
+--.schema atm_transactions
+--SELECT account_number, transaction_type, amount FROM atm_transactions WHERE year = 2020 AND month = 7 AND day = 28 AND atm_location = 'Fifer Street' AND transaction_type = 'withdraw';
+--.tables
+--.schema bank_accounts
+--SELECT person_id FROM bank_accounts WHERE account_number = '28500762' OR account_number = '28296815' OR account_number = '76054385' OR account_number = '49610011' OR account_number = '16153065' OR account_number = '25506511' OR account_number = '81061156' OR account_number = '26013199';
+--SELECT name FROM people WHERE id = (SELECT person_id FROM bank_accounts WHERE account_number = '28500762' OR account_number = '28296815' OR account_number = '76054385' OR account_number = '49610011' OR account_number = '16153065' OR account_number = '25506511' OR account_number = '81061156' OR account_number = '26013199');
+--.tables
+--.schema phone_calls
+--SELECT caller, receiver FROM phone_calls WHERE year = 2020 AND month = 7 AND day = 28 AND duration < 60;
+--SELECT name FROM people WHERE phone_number = '(375) 555-8161';
+--.tables
+--.schema airports
+--SELECT id, abbreviation, city FROM airports WHERE city = 'Fiftyville';
+--.tables
+--.schema flights
+--SELECT id, origin_airport_id, destination_airport_id, hour, minute FROM flights WHERE year = 2020 AND month = 7 AND day = 29 ORDER BY (hour) ASC;
+--.tables
+--.schema airports
+--SELECT city FROM airports WHERE id = 4;
+--.tables
+--.schema passengers
+--SELECT passport_number FROM passengers WHERE flight_id = 36;

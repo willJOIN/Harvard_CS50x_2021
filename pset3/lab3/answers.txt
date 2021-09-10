@@ -1,0 +1,11 @@
+sort1 uses: bubble
+
+How do you know?: Second fastest on sorted test, as expected.
+
+sort2 uses: merge
+
+How do you know?: Fastest of the three in random test, as expected.
+
+sort3 uses: selection
+
+How do you know?: Slowest on sorted test, as expected.

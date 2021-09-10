@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // Part 1
+            document.addEventListener('DOMContentLoaded', function() // Wait until DOM is loaded
+            {
+                let correct = document.querySelector('.button1'); // Change button color and display text when user clicks
+                let clickCounter = 0;
+                correct.addEventListener('click', function() // When button1 clicked
+                {
+                    correct.style.backgroundColor = 'green'; // Set button1 to GREEN
+                    document.querySelector('#Message1').innerHTML = 'Correct!'; // Print on Message1 'Correct!'
+                    clickCounter++;
+                    console.log(clickCounter);
+                });
+                let incorrects = document.querySelectorAll('.button2'); // SelectorAll because there's many incorrect ones
+                for (let i = 0; i < incorrects.length; i++)
+                {
+                    incorrects[i].addEventListener('click', function() // When button2 clicked
+                    {
+                        incorrects[i].style.backgroundColor = 'red'; // Set button1 to RED
+                        document.querySelector('#Message1').innerHTML = 'Incorrect'; // Print on Message1 'Incorrect'
+                        clickCounter++;
+                        console.log(clickCounter);
+                        if (clickCounter > 1) // Only one chance
+                        {
+                            alert('You have only one chance'); // Print to dialog window
+                        }
+                    });
+                }
+
+            // Part 2
+            document.querySelector('#check').addEventListener('click', function ()
+                {
+                    let input = document.querySelector('input');
+                    let Message2 = document.querySelector('#Message2');
+                    if (input.value == "Oh baby, don't hurt me")
+                    {
+                        input.style.backgroundColor = 'green';
+                        Message2.innerHTML = 'Correct!';
+                        console.log('Correct!'); // Print to console
+                    }
+                    else
+                    {
+                        input.style.backgroundColor = 'red';
+                        Message2.innerHTML = 'Incorrect';
+                        console.log('Incorrect');
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is love?</h3>
+                <button class = 'button1'>Oh baby, don't hurt me</button> <!-- Correct -->
+                <button class = 'button2'>Don't hurt me</button>
+                <button class = 'button2'>No more...</button>
+                <p id = 'Message1'></p>
+            </div>
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is love?</h3>
+                <form id = 'input' onsubmit = 'return false;'> <!-- Stop reloading page with button -->
+                    <input type = 'text'></input>
+                    <button id = 'check'>Check Answer</button>
+                    <p id = 'Message2'></p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
